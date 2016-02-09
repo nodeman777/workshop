@@ -12,7 +12,9 @@ var fs = require('fs');
  */
 
 exports.stat = function (filename) {
-
+	return function *(){
+		return fs.statSync(filename);
+	}
 };
 
 /**
@@ -32,5 +34,7 @@ exports.stat = function (filename) {
  */
 
 exports.exists = function (filename) {
-
+	return function *(){
+		return fs.existsSync(filename);
+	}
 };
